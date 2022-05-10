@@ -1,0 +1,30 @@
+
+//Database dropdown menu (html quite obvious)
+
+<label for="databases">Choose a database:</label>
+<select name="databases" id="databases">
+  <option value="database 1 resource">Name of the first database</option>
+  <option value="database 2 resource">Name of the second database</option>
+  <option value="database 3 resource">Name of the third database</option>
+  <option value="database 4 resource">Name of the fourth database</option>
+</select>
+
+
+//For hardcode login ussername and password (Javascript also quite obvious)
+
+const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "user" && password === "web_dev") {
+        alert("You have successfully logged in.");
+        location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }
+})
